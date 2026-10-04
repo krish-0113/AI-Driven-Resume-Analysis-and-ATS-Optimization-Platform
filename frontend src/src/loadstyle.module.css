@@ -1,0 +1,62 @@
+/* =========================================
+   Modern Glassmorphic App Loader Styles
+   ========================================= */
+
+.loadani {
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    background-color: #07090e;
+    background-image: 
+        radial-gradient(circle at 50% 40%, rgba(0, 97, 255, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 50% 60%, rgba(96, 239, 255, 0.1) 0%, transparent 50%);
+}
+
+.loadanimation {
+    width: 68px;
+    height: 68px;
+    display: block;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    animation: spin 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+.loadanimation::before,
+.loadanimation::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #60efff;
+    border-right-color: #0061ff;
+}
+
+.loadanimation::after {
+    filter: blur(8px);
+}
+
+.capstart {
+    display: none;
+}
+
+.loadblock {
+    display: none;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
